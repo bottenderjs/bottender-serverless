@@ -1,0 +1,22 @@
+{
+  "name": "bottender-lambda",
+  "description": "Bottender server adapter for AWS Lambda",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bottenderjs/bottender-lambda.git"
+  },
+  "license": "MIT",
+  "main": "lib/index.js",
+  "keywords": [
+    "bot",
+    "bottender",
+    "bottender-server-adapter",
+    "serverless",
+    "aws",
+    "lambda"
+  ]
+}

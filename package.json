@@ -1,0 +1,61 @@
+{
+  "name": "bottender-serverless",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bottenderjs/bottender-serverless.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=6"
+  },
+  "devDependencies": {
+    "@dschau/prettier-markdown": "^1.2.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-jest": "^22.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "chalk": "^2.3.0",
+    "eslint": "^4.16.0",
+    "eslint-config-yoctol-base": "^0.15.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-prettier": "^2.5.0",
+    "husky": "^0.14.3",
+    "jest": "^22.1.4",
+    "lerna": "^2.8.0",
+    "lint-staged": "^6.0.1",
+    "micromatch": "^3.1.5",
+    "mkdir": "^0.0.2",
+    "prettier": "^1.10.2",
+    "rimraf": "^2.6.2"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "node ./scripts/build.js",
+    "clean": "rimraf ./packages/*/lib",
+    "lint": "eslint packages examples",
+    "lint:fix": "yarn run lint:fix:md && yarn run lint --fix",
+    "lint:fix:md":
+      "prettier-markdown --single-quote --trailing-comma es5 *.md ./packages/**/*.md",
+    "lint:staged": "lint-staged",
+    "postinstall": "yarn run build",
+    "precommit": "lint-staged",
+    "publish": "yarn run clean && yarn run build && lerna publish",
+    "testonly": "jest",
+    "testonly:cov": "jest --coverage --runInBand --forceExit --no-cache",
+    "testonly:watch": "jest --watch",
+    "test": "yarn run typecheck && yarn run lint && yarn run testonly",
+    "typecheck": "flow check"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"]
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "transformIgnorePatterns": ["/node_modules/"],
+    "testEnvironment": "node"
+  },
+  "workspaces": ["packages/*"]
+}

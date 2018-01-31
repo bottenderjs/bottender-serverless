@@ -1,0 +1,22 @@
+{
+  "name": "bottender-cloud-functions",
+  "description": "Bottender server adapter for Cloud Funcitons",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bottenderjs/bottender-cloud-functions.git"
+  },
+  "license": "MIT",
+  "main": "lib/index.js",
+  "keywords": [
+    "bot",
+    "bottender",
+    "bottender-server-adapter",
+    "serverless",
+    "gcp",
+    "cloud-functions"
+  ]
+}

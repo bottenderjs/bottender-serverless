@@ -1,0 +1,11 @@
+{
+  "lerna": "2.8.0",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "0.0.1",
+  "commands": {
+    "publish": {
+      "ignore": ["__tests__/**"]
+    }
+  }
+}
