@@ -1,4 +1,4 @@
-// export { default as createRequestHandler } from './createRequestHandler';
+export { default as createRequestHandler } from './createRequestHandler';
 // export { default as verifyLineSignature } from './verifyLineSignature';
 // export {
 //   default as verifyMessengerSignature,
