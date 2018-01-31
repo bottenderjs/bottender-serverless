@@ -1,7 +1,19 @@
 function createRequestHandler(bot, config = {}) {
   const requestHandler = bot.createRequestHandler();
-  return (event, callback) => {
+  return async (event, callback) => {
     // ...
-    callback(null, { statusCode: 200 });
+    // ...
+    const response = await requestHandler(event.body);
+    if (response) {
+      callback(null, {
+        statusCode: response.status || 200,
+        headers: response.headers || {},
+        body: response.body || '',
+      });
+    } else {
+      callback(null, { statusCode: 200 });
+    }
   };
 }
+
+export default createRequestHandler;
