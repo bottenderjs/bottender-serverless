@@ -1,1 +1,0 @@
-# bottender-serverless-framework
